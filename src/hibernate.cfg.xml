@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 首次配置为create，可自动生成表 -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<mapping class="com.qunawan.entity.Placeontrip" />
+		<mapping class="com.qunawan.entity.Trippicture" />
+		<mapping class="com.qunawan.entity.Comment" />
+		<mapping class="com.qunawan.entity.Detail" />
+		<mapping class="com.qunawan.entity.Themeontrip" />
+		<mapping class="com.qunawan.entity.Manager" />
+		<mapping class="com.qunawan.entity.User" />
+		<mapping class="com.qunawan.entity.Theme" />
+		<mapping class="com.qunawan.entity.Contact" />
+		<mapping class="com.qunawan.entity.Sequence" />
+		<mapping class="com.qunawan.entity.Dates" />
+		<mapping class="com.qunawan.entity.Place" />
+		<mapping class="com.qunawan.entity.Ordercontact" />
+		<mapping class="com.qunawan.entity.Trip" />
+		<mapping class="com.qunawan.entity.Price" />
+		<mapping class="com.qunawan.entity.Position" />
+		<mapping class="com.qunawan.entity.Traffic" />
+		<mapping class="com.qunawan.entity.Commentpicture" />
+		<mapping class="com.qunawan.entity.Schedule" />
+		<mapping class="com.qunawan.entity.City" />
+		<mapping class="com.qunawan.entity.Orders" />
+	</session-factory>
+</hibernate-configuration>

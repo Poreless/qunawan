@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	
+    <package name="user" namespace="/" extends="struts-default">
+		
+		<action name="index" class="indexAction">
+			<result name="success">/pages/index.jsp</result>
+		</action>
+		
+		<action name="user" class="userAction">
+			<result name="loginSuc" type="chain">index</result>
+			<result name="logoutSuc" type="chain">index</result>
+			<result name="registerSuc" type="chain">index</result>
+			<result name="preInfoSuc">/pages/personal/personal_information.jsp</result>
+			<result name="prePwdSuc">/pages/personal/personal_passwordChange.jsp</result>
+			<result name="preOrderSuc">/pages/personal/personal_myOrder.jsp</result>
+			<result name="preComSuc">/pages/personal/personal_myComments.jsp</result>
+			<result name="updateInfoSuc">/pages/personal/personal_information.jsp</result>
+			<result name="updatePwdSuc">/pages/personal/personal_passwordChange.jsp</result>
+			<result name="updatePwdFail">/pages/personal/personal_passwordChange.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		
+    </package>
+    
+    <package name="trip" namespace="/" extends="struts-default">
+    	<action name="trip" class="tripAction">
+			<result name="showDetailSuc">/pages/trip_detail.jsp</result>
+			<result name="searchSuc">/pages/search.jsp</result>
+		</action>
+    </package>
+    
+    <package name="ajax" namespace="/" extends="json-default">
+    	<action name="ajax" class="ajaxAction">
+    		<result type="json">
+    			<param name="excludeNullProperties">true</param>
+    			<param name="root">data</param>
+    		</result>
+    	</action>
+    </package>
+    
+</struts>
